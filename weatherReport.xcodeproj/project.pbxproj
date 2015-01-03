@@ -15,6 +15,9 @@
 		748C280B1A57A1DD00612DA4 /* weatherReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C280A1A57A1DD00612DA4 /* weatherReportTests.swift */; };
 		748C28151A57A39D00612DA4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C28141A57A39D00612DA4 /* TableViewController.swift */; };
 		748C28171A57A3DF00612DA4 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C28161A57A3DF00612DA4 /* CellViewController.swift */; };
+		748C28191A57F71100612DA4 /* ModelLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C28181A57F71100612DA4 /* ModelLocator.swift */; };
+		748C281B1A57F78400612DA4 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C281A1A57F78400612DA4 /* EventModel.swift */; };
+		748C281F1A57FEE700612DA4 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C281E1A57FEE700612DA4 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		748C280A1A57A1DD00612DA4 /* weatherReportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherReportTests.swift; sourceTree = "<group>"; };
 		748C28141A57A39D00612DA4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		748C28161A57A3DF00612DA4 /* CellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
+		748C28181A57F71100612DA4 /* ModelLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelLocator.swift; sourceTree = "<group>"; };
+		748C281A1A57F78400612DA4 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		748C281E1A57FEE700612DA4 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,11 @@
 				748C27F41A57A1DC00612DA4 /* AppDelegate.swift */,
 				748C27F61A57A1DC00612DA4 /* ViewController.swift */,
 				748C28161A57A3DF00612DA4 /* CellViewController.swift */,
+				748C28181A57F71100612DA4 /* ModelLocator.swift */,
 				748C28141A57A39D00612DA4 /* TableViewController.swift */,
+				748C281E1A57FEE700612DA4 /* Const.swift */,
 				748C27F81A57A1DC00612DA4 /* Main.storyboard */,
+				748C281A1A57F78400612DA4 /* EventModel.swift */,
 				748C27FB1A57A1DC00612DA4 /* Images.xcassets */,
 				748C27FD1A57A1DC00612DA4 /* LaunchScreen.xib */,
 				748C27F21A57A1DC00612DA4 /* Supporting Files */,
@@ -218,10 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748C28191A57F71100612DA4 /* ModelLocator.swift in Sources */,
 				748C27F71A57A1DC00612DA4 /* ViewController.swift in Sources */,
 				748C28151A57A39D00612DA4 /* TableViewController.swift in Sources */,
 				748C28171A57A3DF00612DA4 /* CellViewController.swift in Sources */,
+				748C281B1A57F78400612DA4 /* EventModel.swift in Sources */,
 				748C27F51A57A1DC00612DA4 /* AppDelegate.swift in Sources */,
+				748C281F1A57FEE700612DA4 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

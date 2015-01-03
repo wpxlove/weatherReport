@@ -9,10 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    // セクションの数
-    let sectionNum = 1
-    // 1セクションあたりのセルの行数
-    let cellNum = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,13 +30,13 @@ class TableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return self.sectionNum
+        return Const.tableSectionNum
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.cellNum
+        return Const.tableCellNum
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
