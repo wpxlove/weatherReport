@@ -9,7 +9,10 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    // セクションの数
+    let sectionNum = 1
+    // 1セクションあたりのセルの行数
+    let cellNum = 10
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,24 +33,25 @@ class TableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return self.sectionNum
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.cellNum
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
 
         return cell
     }
-    */
+    override func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("toCellViewController", sender: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.
