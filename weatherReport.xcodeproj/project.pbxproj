@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		748C27F51A57A1DC00612DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C27F41A57A1DC00612DA4 /* AppDelegate.swift */; };
-		748C27F71A57A1DC00612DA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C27F61A57A1DC00612DA4 /* ViewController.swift */; };
 		748C27FA1A57A1DC00612DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 748C27F81A57A1DC00612DA4 /* Main.storyboard */; };
 		748C27FC1A57A1DC00612DA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 748C27FB1A57A1DC00612DA4 /* Images.xcassets */; };
 		748C27FF1A57A1DC00612DA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 748C27FD1A57A1DC00612DA4 /* LaunchScreen.xib */; };
@@ -34,7 +33,6 @@
 		748C27EF1A57A1DC00612DA4 /* weatherReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		748C27F31A57A1DC00612DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748C27F41A57A1DC00612DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		748C27F61A57A1DC00612DA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		748C27F91A57A1DC00612DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		748C27FB1A57A1DC00612DA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		748C27FE1A57A1DC00612DA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				748C27F41A57A1DC00612DA4 /* AppDelegate.swift */,
-				748C27F61A57A1DC00612DA4 /* ViewController.swift */,
 				748C28161A57A3DF00612DA4 /* CellViewController.swift */,
 				748C28181A57F71100612DA4 /* ModelLocator.swift */,
 				748C28141A57A39D00612DA4 /* TableViewController.swift */,
@@ -228,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				748C28191A57F71100612DA4 /* ModelLocator.swift in Sources */,
-				748C27F71A57A1DC00612DA4 /* ViewController.swift in Sources */,
 				748C28151A57A39D00612DA4 /* TableViewController.swift in Sources */,
 				748C28171A57A3DF00612DA4 /* CellViewController.swift in Sources */,
 				748C281B1A57F78400612DA4 /* EventModel.swift in Sources */,
