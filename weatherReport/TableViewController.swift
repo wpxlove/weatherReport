@@ -15,22 +15,60 @@ class TableViewController: UITableViewController {
     
     // 選択されたセルの列番号
     var selectedRow: Int?
+    
+    // セルの中身
+    var cellItems = NSMutableArray()
 
     override func viewDidLoad() {
-        println("superl load start")
-        super.viewDidLoad()
-                println("superl load end")
-
-        println("update json data outer")
+        // observerとして登録
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "notificationDid:", name: "updatedWeatherMaster", object: nil)
+        // API叩く
         WeatherMaster.sharedInstance.update()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "updatedWeatherMaster", object: nil)
-        println("update json data end")
+
+        super.viewDidLoad()
+        
+        // プルダウンでリロード機能の付加
+        addRefreshControl()
+        println("finish view did load")
+    }
+    // プルダウンでリロード機能を付加
+    func addRefreshControl() {
+        var refresh = UIRefreshControl()
+        // ロード時に表示される文字を設定
+        refresh.attributedTitle = NSAttributedString(string: "Loading...")
+        // プルダウン時に呼び出されるメソッドを設定
+        refresh.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refresh
     }
 
-    func update(notif: NSNotification) {
-        println("start make object for table data")
+    // APIデータ取得完了後に呼び出される
+    func notificationDid(notification : NSNotification?) {
+        self.hasCellData = false
+        updateCellItems()
+        loadTableData()
+    }
+    func updateCellItems() {
+        self.cellItems = WeatherMaster.sharedInstance.getArray()
         self.hasCellData = true
     }
+    func loadTableData() {
+        // tableviewの更新
+        // main threadで実行させないとtableが更新されないので、無理やりこうしてる
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
+    }
+    func refreshData() {
+        println("start refresh")
+        // API叩く
+        WeatherMaster.sharedInstance.update()
+        updateCellItems()
+        loadTableData()
+        refreshControl?.endRefreshing()
+        println("end refresh")
+    }
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,22 +89,20 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        self.sleepInLoading()
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
-        // Configure the cell...
-        cell.textLabel.text = WeatherMaster.sharedInstance.getArray()[indexPath.row] as? String
+      //  println(self.cellItems)
+        // データ持ってたら突っ込む
+        if self.hasCellData {
+            // Configure the cell...
+            cell.textLabel.text = self.cellItems[indexPath.row] as? String
+        } else {
+            println("not has cell data")
+        }
         return cell
     }
     override func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedRow = indexPath.row
         performSegueWithIdentifier("toCellViewController", sender: nil)
-    }
-    // こんなメソッド使わなくても、
-    // NSNotificationCenterでどうにかできないものか。。。
-    func sleepInLoading() {
-        while !self.hasCellData {
-            usleep(1000)
-        }
     }
     /*
     // Override to support conditional editing of the table view.

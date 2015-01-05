@@ -17,17 +17,10 @@ class WeatherMaster {
         }
         return Singleton.instance
     }
-    init() {
-        println(" weather master init")
-    }
-    func handler(notif: NSNotification) {
-        println("MyNotification was handled")
-    }
+
     func update() {
-        println("start api")
         var url = NSURL(string: Const.apiUrlString)!
         var task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {data, response, error in
-            println("get resource")
             var json = JSON(data: data)
             for var i = 0; i < Const.tableCellNum; i++ {
                 var dt_txt = json["list"][i]["dt_txt"]
@@ -36,15 +29,15 @@ class WeatherMaster {
                 var info = "\(dt_txt), \(weatherMain), \(weatherDescription)"
                 self.array[i] = info
             }
-            println("owatta tuuchi okuru yo!")
+            println("post notification")
             // 通信終わったよ通知を送る
             NSNotificationCenter.defaultCenter().postNotificationName("updatedWeatherMaster", object: nil);
-            println("end api")
+
         })
         task.resume()
     }
     func getArray() -> NSMutableArray {
-        println("getter json array data")
+        println("getter array")
         return self.array
     }
 }
