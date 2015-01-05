@@ -47,6 +47,7 @@ class TableViewController: UITableViewController {
         updateCellItems()
         loadTableData()
     }
+    // cellにデータをつっこむ
     func updateCellItems() {
         self.cellItems = WeatherMaster.sharedInstance.getArray()
         self.hasCellData = true
