@@ -10,16 +10,27 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    // ロード中
+    var hasCellData = false;
+    
+    // 選択されたセルの列番号
+    var selectedRow: Int?
+
     override func viewDidLoad() {
+        println("superl load start")
         super.viewDidLoad()
+                println("superl load end")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        println("update json data outer")
+        WeatherMaster.sharedInstance.update()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "updatedWeatherMaster", object: nil)
+        println("update json data end")
     }
 
+    func update(notif: NSNotification) {
+        println("start make object for table data")
+        self.hasCellData = true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,16 +51,23 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        self.sleepInLoading()
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
-
         // Configure the cell...
-
+        cell.textLabel.text = WeatherMaster.sharedInstance.getArray()[indexPath.row] as? String
         return cell
     }
     override func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedRow = indexPath.row
         performSegueWithIdentifier("toCellViewController", sender: nil)
     }
-
+    // こんなメソッド使わなくても、
+    // NSNotificationCenterでどうにかできないものか。。。
+    func sleepInLoading() {
+        while !self.hasCellData {
+            usleep(1000)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -85,14 +103,18 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "toCellViewController" {
+            // 遷移先のViewContollerに、選択された行を渡す
+            let cellVC : CellViewController = segue.destinationViewController as CellViewController
+            cellVC.selectedRow = self.selectedRow!
+        }
     }
-    */
 
 }
