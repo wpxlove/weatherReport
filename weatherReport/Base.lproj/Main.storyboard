@@ -35,7 +35,7 @@
             </objects>
             <point key="canvasLocation" x="299.5" y="338.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--東京の天気          -->
         <scene sceneID="Oiw-Ms-eyY">
             <objects>
                 <tableViewController id="0N2-be-ajl" customClass="TableViewController" customModule="weatherReport" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,25 +50,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cam-vv-4VM">
-                                            <rect key="frame" x="8" y="10" width="128" height="24"/>
+                                            <rect key="frame" x="8" y="12" width="128" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paz-GZ-hPO">
-                                            <rect key="frame" x="182" y="8" width="110" height="21"/>
+                                            <rect key="frame" x="169" y="7" width="139" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-Kw-jqK">
-                                            <rect key="frame" x="182" y="24" width="110" height="21"/>
+                                            <rect key="frame" x="169" y="24" width="139" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2R-Uo-1Ev">
-                                            <rect key="frame" x="101" y="5" width="40" height="40"/>
+                                            <rect key="frame" x="111" y="-3" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -85,14 +85,14 @@
                             <outlet property="delegate" destination="0N2-be-ajl" id="TwD-8x-Zna"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="LmX-80-UeS"/>
+                    <navigationItem key="navigationItem" title="東京の天気          " id="LmX-80-UeS"/>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="toCellViewController" id="MoI-vR-fSf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAc-aT-zCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161.5" y="336.5"/>
+            <point key="canvasLocation" x="-161" y="333.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IGc-FV-tYH">
