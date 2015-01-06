@@ -95,8 +95,14 @@ class TableViewController: UITableViewController {
         // データ持ってたら突っ込む
         if self.hasCellItems {
             // Configure the cell...
-            cell.mainLabel.text = self.cellItems[indexPath.row]["dt_txt"] as String!
-            cell.subLabel.text = self.cellItems[indexPath.row]["main"] as String!
+            //let mainLabel = tableView.viewWithTag(1) as UILabel
+            //mainLabel.text = "aaaaaaaaaa"
+            //cell.mainLabel.text = self.cellItems[indexPath.row]["dt_txt"] as String!
+            //cell.subLabel.text = self.cellItems[indexPath.row]["main"] as String!
+            var icon = self.cellItems[indexPath.row]["icon"] as String!
+            //var img = UIImage(named: "Supporting Files/01d.png")
+           // cell.myImage.image = UIImage(image: img)
+            cell.myImage?.image = UIImage(named:"\(icon).png")
         } else {
             println("not has cell data")
         }
