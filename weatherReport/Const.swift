@@ -24,4 +24,8 @@ class Const {
     class var apiUrlString : String {
         return "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=Tokyo"
     }
+    // 曜日
+    class var allWeekDay : Array<String> {
+        return ["-", "日", "月", "火" , "水", "木", "金", "土"]
+    }
 }

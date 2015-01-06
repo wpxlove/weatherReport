@@ -33,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315.5" y="345.5"/>
+            <point key="canvasLocation" x="299.5" y="338.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Oiw-Ms-eyY">
@@ -50,26 +50,33 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cam-vv-4VM">
-                                            <rect key="frame" x="16" y="8" width="331" height="21"/>
+                                            <rect key="frame" x="8" y="10" width="128" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kX-0T-lJZ">
-                                            <rect key="frame" x="16" y="24" width="164" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paz-GZ-hPO">
+                                            <rect key="frame" x="182" y="8" width="110" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-Kw-jqK">
+                                            <rect key="frame" x="182" y="24" width="110" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2R-Uo-1Ev">
-                                            <rect key="frame" x="179" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="101" y="5" width="40" height="40"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="humidityLabel" destination="x2B-Kw-jqK" id="sRB-ak-S88"/>
                                     <outlet property="mainLabel" destination="Cam-vv-4VM" id="aWQ-fZ-evi"/>
                                     <outlet property="myImage" destination="N2R-Uo-1Ev" id="mPB-Sd-G32"/>
-                                    <outlet property="subLabel" destination="9kX-0T-lJZ" id="ggw-eT-ljn"/>
+                                    <outlet property="tempLabel" destination="paz-GZ-hPO" id="wWL-ma-TMB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAc-aT-zCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161.5" y="340.5"/>
+            <point key="canvasLocation" x="-161.5" y="336.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IGc-FV-tYH">

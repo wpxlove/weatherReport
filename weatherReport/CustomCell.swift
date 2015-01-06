@@ -15,7 +15,9 @@ class CustomCell: UITableViewCell {
 
     @IBOutlet weak var mainLabel: UILabel!
 
-    @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet var tempLabel: UILabel!
+    
+    @IBOutlet var humidityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
