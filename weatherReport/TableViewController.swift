@@ -95,8 +95,8 @@ class TableViewController: UITableViewController {
         // データ持ってたら突っ込む
         if self.hasCellItems {
             // Configure the cell...
-            cell.mainLabel.text = self.cellItems[indexPath.row] as? String
-            cell.subLabel.text = "sub"
+            cell.mainLabel.text = self.cellItems[indexPath.row]["dt_txt"] as String!
+            cell.subLabel.text = self.cellItems[indexPath.row]["main"] as String!
         } else {
             println("not has cell data")
         }

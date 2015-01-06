@@ -24,11 +24,13 @@ class WeatherMaster {
         var task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {data, response, error in
             var json = JSON(data: data)
             for var i = 0; i < Const.tableCellNum; i++ {
-                var dt_txt = json["list"][i]["dt_txt"]
-                var weatherMain = json["list"][i]["weather"][0]["main"]
-                var weatherDescription = json["list"][i]["weather"][0]["description"]
-                var info = "\(dt_txt), \(weatherMain), \(weatherDescription)"
-                self.array[i] = info
+                self.array[i] = [
+                    "dt_txt" : json["list"][i]["dt_txt"].stringValue!,
+                    "description" : json["list"][i]["weather"][0]["description"].stringValue!,
+                    "icon"   : json["list"][i]["weather"][0]["icon"].stringValue!,
+                    "main"   : json["list"][i]["weather"][0]["main"].stringValue!
+                ]
+                //println(self.array[i])
             }
             println("post notification")
             // 通信終わったよ通知を送る
