@@ -39,7 +39,7 @@
 		748C28041A57A1DD00612DA4 /* weatherReportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherReportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		748C28091A57A1DD00612DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748C280A1A57A1DD00612DA4 /* weatherReportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherReportTests.swift; sourceTree = "<group>"; };
-		748C28141A57A39D00612DA4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		748C28141A57A39D00612DA4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		748C28161A57A3DF00612DA4 /* CellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		748C281E1A57FEE700612DA4 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8FFC957F1A5A3C7000223B78 /* WeatherMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMaster.swift; sourceTree = "<group>"; };

@@ -10,8 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    // ロード中
-    var hasCellData = false;
+    // var cellItemsにデータが入ってるかどうか
+    var hasCellItems = false;
     
     // 選択されたセルの列番号
     var selectedRow: Int?
@@ -43,14 +43,14 @@ class TableViewController: UITableViewController {
 
     // APIデータ取得完了後に呼び出される
     func notificationDid(notification : NSNotification?) {
-        self.hasCellData = false
+        self.hasCellItems = false
         updateCellItems()
         loadTableData()
     }
     // cellにデータをつっこむ
     func updateCellItems() {
         self.cellItems = WeatherMaster.sharedInstance.getArray()
-        self.hasCellData = true
+        self.hasCellItems = true
     }
     func loadTableData() {
         // tableviewの更新
@@ -88,12 +88,11 @@ class TableViewController: UITableViewController {
         // Return the number of rows in the section.
         return Const.tableCellNum
     }
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
       //  println(self.cellItems)
         // データ持ってたら突っ込む
-        if self.hasCellData {
+        if self.hasCellItems {
             // Configure the cell...
             cell.textLabel.text = self.cellItems[indexPath.row] as? String
         } else {

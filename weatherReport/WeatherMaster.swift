@@ -18,6 +18,7 @@ class WeatherMaster {
         return Singleton.instance
     }
 
+    // API叩いてself.arrayを更新
     func update() {
         var url = NSURL(string: Const.apiUrlString)!
         var task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {data, response, error in
