@@ -33,8 +33,8 @@ class WeatherMaster {
                 //var weekDay = self.getWeekDay(dtDate)
                 var dt_str = self.dateFormatter.stringFromDate(dtDate)
 
-                var temp = json["list"][i]["main"]["temp"].stringValue! + "°C"
-                var humidity = json["list"][i]["main"]["humidity"].stringValue! + "%"
+                var temp =     "気温: " + json["list"][i]["main"]["temp"].stringValue! + "°C"
+                var humidity = "湿度: " + json["list"][i]["main"]["humidity"].stringValue! + "%"
                 println(dt_str)
                 self.array[i] = [
                     "dt_str" : dt_str,
