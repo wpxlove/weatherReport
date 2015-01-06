@@ -24,7 +24,8 @@ class TableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "notificationDid:", name: "updatedWeatherMaster", object: nil)
         // API叩く
         WeatherMaster.sharedInstance.update()
-
+        // tableの高さ変更
+        self.tableView.rowHeight = 50
         super.viewDidLoad()
         
         // プルダウンでリロード機能の付加
@@ -89,12 +90,13 @@ class TableViewController: UITableViewController {
         return Const.tableCellNum
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as CustomCell
       //  println(self.cellItems)
         // データ持ってたら突っ込む
         if self.hasCellItems {
             // Configure the cell...
-            cell.textLabel.text = self.cellItems[indexPath.row] as? String
+            cell.mainLabel.text = self.cellItems[indexPath.row] as? String
+            cell.subLabel.text = "sub"
         } else {
             println("not has cell data")
         }
