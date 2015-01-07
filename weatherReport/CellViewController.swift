@@ -10,16 +10,31 @@ import UIKit
 
 class CellViewController: UIViewController {
     var selectedRow : Int?
-    
+    let dateFormatter = NSDateFormatter()
+
     
     @IBOutlet weak var myLabel: UILabel!
+    
+    @IBOutlet var myImage: UIImageView!
+    
+    @IBOutlet var mainLabel: UILabel!
+    
+    @IBOutlet var descLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
     }
     func makeView() {
-        self.myLabel.text = WeatherMaster.sharedInstance.getArray()[self.selectedRow!] as? String
+        var weather : AnyObject = WeatherMaster.sharedInstance.getArray()[self.selectedRow!]
+        self.setConfig()
+        var dtStr = weather["dtStr"] as NSString
+        var dtDate = NSDate(timeIntervalSince1970:dtStr.doubleValue)
+        self.myLabel.text = self.dateFormatter.stringFromDate(dtDate)
+        self.mainLabel.text = weather["temp"] as String!
+        self.descLabel.text = weather["description"] as String!
+        var icon = weather["icon"] as String!
+        self.myImage?.image = UIImage(named:"\(icon).png")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,4 +42,10 @@ class CellViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // dateFormatterのパラメーターを設定
+    func setConfig() {
+        self.dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        self.dateFormatter.timeStyle = .LongStyle
+        self.dateFormatter.dateStyle = .LongStyle
+    }
 }

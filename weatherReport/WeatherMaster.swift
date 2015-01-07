@@ -41,6 +41,7 @@ class WeatherMaster {
                 self.array[i] = [
                     "dt_str" : dt_str,
                //     "humidity" : humidity,
+                    "dtStr"  : dtStr,
                     "icon"   : json["list"][i]["weather"][0]["icon"].stringValue!,
                     "main"   : json["list"][i]["weather"][0]["main"].stringValue!,
                     "description" : description,

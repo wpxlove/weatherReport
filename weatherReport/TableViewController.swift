@@ -95,14 +95,10 @@ class TableViewController: UITableViewController {
         // データ持ってたら突っ込む
         if self.hasCellItems {
 
-
-
             cell.mainLabel.text = self.cellItems[indexPath.row]["dt_str"] as String!
             cell.tempLabel.text = self.cellItems[indexPath.row]["temp"] as String!
             cell.humidityLabel.text = self.cellItems[indexPath.row]["main"] as String!
             var icon = self.cellItems[indexPath.row]["icon"] as String!
-
-
             cell.myImage?.image = UIImage(named:"\(icon).png")
         } else {
             println("not has cell data")
