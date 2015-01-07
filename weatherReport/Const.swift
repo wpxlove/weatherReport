@@ -18,7 +18,7 @@ class Const {
     }
     // 1セクションあたりのセルの行数
     class var tableCellNum : Int {
-        return 10
+        return 12
     }
     // API取得先URL
     class var apiUrlString : String {
