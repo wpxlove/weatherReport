@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Darwin
 
 class WeatherMaster {
     var array = NSMutableArray()
@@ -33,15 +33,18 @@ class WeatherMaster {
                 //var weekDay = self.getWeekDay(dtDate)
                 var dt_str = self.dateFormatter.stringFromDate(dtDate)
 
-                var temp =     "気温: " + json["list"][i]["main"]["temp"].stringValue! + "°C"
-                var humidity = "湿度: " + json["list"][i]["main"]["humidity"].stringValue! + "%"
+                // 気温
+                var tempStr = json["list"][i]["main"]["temp"].stringValue!
+                var tempDouble = atof(tempStr)
+                var description = json["list"][i]["weather"][0]["description"].stringValue!
                 println(dt_str)
                 self.array[i] = [
                     "dt_str" : dt_str,
-                    "humidity" : humidity,
+               //     "humidity" : humidity,
                     "icon"   : json["list"][i]["weather"][0]["icon"].stringValue!,
                     "main"   : json["list"][i]["weather"][0]["main"].stringValue!,
-                    "temp"   : temp
+                    "description" : description,
+                    "temp"   : String("\(tempDouble)") + "°C"
                 ]
                 //println(self.array[i])
             }

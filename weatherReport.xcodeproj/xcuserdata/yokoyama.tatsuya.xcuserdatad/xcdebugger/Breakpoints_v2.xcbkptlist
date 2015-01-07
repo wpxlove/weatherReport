@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherReport/weatherMaster.swift"
-            timestampString = "442232498.579703"
+            timestampString = "442290487.01514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "WeatherMaster"
             landmarkType = "3">
          </BreakpointContent>
